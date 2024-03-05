@@ -76,8 +76,8 @@ export let PaymentController = asyncHandler(async (req, res, next) => {
       payment_method_types: ["card"],
       line_items,
       mode: "payment",
-      success_url: "https://ecommerce-app-iota-green.vercel.app/success",
-      cancel_url: "https://ecommerce-app-iota-green.vercel.app/",
+      success_url: "https://habesha-market-hub.vercel.app/success",
+      cancel_url: "https://habesha-market-hub.vercel.app/",
     });
 
     res.send({ url: session.url });

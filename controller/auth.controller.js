@@ -111,7 +111,7 @@ export let LoginWithGoogleProvider = asyncHandler(async (req, res, next) => {
 });
 export let Logout = (req, res, next) => {
   try {
-    res.clearCookie("token").status(200).json({ data: "user logged out!" });
+    res.status(200).json({ data: "user logged out!" });
   } catch (error) {
     next(error);
   }
