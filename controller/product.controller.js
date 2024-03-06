@@ -63,3 +63,13 @@ export let AllProduct = asyncHandler(async (req, res, next) => {
     res.status(200).json({ data: result });
   } catch (error) {}
 });
+export let LoadTenProducts = asyncHandler(async (req, res, next) => {
+  try {
+    let { page, limit } = req.query;
+    let skip = (page - 1) * limit;
+    let data = await Product.find().skip(parseInt(skip)).limit(parseInt(limit));
+    res.status(200).json({ data: data });
+  } catch (error) {
+    next(error);
+  }
+});
